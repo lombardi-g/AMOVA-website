@@ -1,0 +1,119 @@
+* {
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fff;
+}
+
+h1 {
+    text-align: center;
+}
+
+h1 img{
+    max-width: 100%;
+    height: 220px;
+    margin: auto;
+}
+
+footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 1rem;
+}
+
+.social-link{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+}
+
+.social-link img{
+    max-width: 100%;
+    height: 30px;
+    margin-bottom: 5px;
+}
+
+.content {
+    /* width: auto; */
+    /* height: 100vh; */
+    padding: 2rem;
+    background-color: #a6cf4a;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.doccards{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    box-sizing: content-box;
+    list-style: none;
+    justify-content: space-between;
+}
+
+.doccard{
+    box-shadow: 9px 9px 27px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 9px 9px 27px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 9px 9px 27px 0px rgba(0, 0, 0, 0.75);
+    background-color: #029edb;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    justify-content: space-between;
+}
+
+.doccard img{
+    max-width: 100%;
+    height: 120px;
+    margin-bottom: 0.3rem;
+}
+
+
+.doccard .name {
+    color: black;
+    text-align:justify;
+    padding: .25rem .5rem;
+    margin: .25rem;
+    font-size: 1.5rem;
+    border-radius: 1rem;
+    background-color: #029edb;
+    filter: brightness(1.15);
+}
+
+.doccard a{
+    text-decoration:none;
+}
+
+.doccard a:hover{
+    background-color: #029edb;
+    opacity: 0.5;
+    
+}
+
+/* @media screen and (min-width: 992px) {
+    .content {
+        max-width: 992px;
+        height: auto;
+        margin: 1rem auto;
+        border-radius: 1rem;
+    }
+} */
+
+@media screen and (max-width: 430px) {
+    .content{
+        flex-direction: column;
+    }
+    .doccards {
+        grid-template-columns: 1fr;
+    }
+    footer{
+        flex-direction: column;
+    }
+}
