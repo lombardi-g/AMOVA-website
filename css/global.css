@@ -73,6 +73,9 @@ footer{
     padding: 1rem;
     border-radius: 1rem;
     justify-content: space-between;
+    max-height: 240px;
+    border: black;
+    border-width: 30px;
 }
 
 .doccard img{
