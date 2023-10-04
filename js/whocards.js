@@ -83,14 +83,16 @@ class Whocards extends HTMLElement{
                     justify-content:center;
                     align-items:center;
                     padding:5px;
+                    width: 100px;
+                    height: 100px;
+                    overflow: hidden;
                 }
 
                 .card__right img{
                     margin:0;
                     padding:0;
-                    max-width: 100%;
+                    width: 100%;
                     height: 100%;
-                    height: 90px;
                     object-fit:cover;
                     // filter: drop-shadow(-20px 10px 7px #000);
                     
