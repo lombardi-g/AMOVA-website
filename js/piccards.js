@@ -16,6 +16,9 @@ class NewsCards extends HTMLElement{
 
             const shortTitle = document.createElement("p");
             shortTitle.textContent = this.getAttribute("manchete") || "Sem título";
+
+            const date = document.createElement("p");
+            date.textContent = this.getAttribute("data") || "Sem data";
             
             const readMore = document.createElement("span");
             readMore.textContent = `Ler mais...`;
@@ -31,6 +34,7 @@ class NewsCards extends HTMLElement{
 
             componentRoot.appendChild(shortImg);
             textContainer.appendChild(shortTitle);
+            textContainer.appendChild(date);
             textContainer.appendChild(readMore);
             textContainer.appendChild(longText);
             componentRoot.appendChild(textContainer);
@@ -44,7 +48,7 @@ class NewsCards extends HTMLElement{
             const shortImg = this.shadowRoot.querySelector(".card img");
             longText.style.display = (longText.style.display === "none" || longText.style.display === "") ? "block" : "none";
             card.style.flexDirection = (card.style.flexDirection === "row" || card.style.flexDirection === "") ? "column" : "row";
-            shortImg.style.maxWidth = (shortImg.style.maxWidth === "90px" || shortImg.style.maxWidth === "") ? "500px" :"90px";
+            shortImg.style.width = (shortImg.style.width === "90px" || shortImg.style.maxWidth === "") ? "100%" :"90px";
             }
 
         styles() {
@@ -65,7 +69,7 @@ class NewsCards extends HTMLElement{
                 .card img{
                     margin: 1px;
                     padding: 1px;
-                    max-width: 12rem;
+                    max-width: 100%;
                     max-height: auto;
                     object-fit: cover;
                     
@@ -107,7 +111,7 @@ class NewsCards extends HTMLElement{
                     .card img{
                         margin: 1px;
                         padding: 1px;
-                        max-width: 90px;
+                        width: 90px;
                         max-height: auto;
                         object-fit: cover;
                         
