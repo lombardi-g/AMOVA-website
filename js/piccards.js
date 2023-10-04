@@ -48,7 +48,7 @@ class NewsCards extends HTMLElement{
             const shortImg = this.shadowRoot.querySelector(".card img");
             longText.style.display = (longText.style.display === "none" || longText.style.display === "") ? "block" : "none";
             card.style.flexDirection = (card.style.flexDirection === "row" || card.style.flexDirection === "") ? "column" : "row";
-            shortImg.style.width = (shortImg.style.width === "90px" || shortImg.style.maxWidth === "") ? "100%" :"90px";
+            shortImg.style.maxWidth = (shortImg.style.maxWidth === "90px" || shortImg.style.maxWidth === "") ? "50rem" :"90px";
             }
 
         styles() {
@@ -69,7 +69,7 @@ class NewsCards extends HTMLElement{
                 .card img{
                     margin: 1px;
                     padding: 1px;
-                    max-width: 100%;
+                    max-width: 90px;
                     max-height: auto;
                     object-fit: cover;
                     
@@ -105,13 +105,15 @@ class NewsCards extends HTMLElement{
                     display: none;
                     border: 50 rem;
                     font-size: 5 rem;
+                    overflow-wrap: break-word;
+                    max-width: 50rem;
                 }
 
                 @media screen and (max-width: 530px) {
                     .card img{
                         margin: 1px;
                         padding: 1px;
-                        width: 90px;
+                        max-width: 90px;
                         max-height: auto;
                         object-fit: cover;
                         
