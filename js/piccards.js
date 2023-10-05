@@ -8,8 +8,9 @@ class NewsCards extends HTMLElement{
     }
 
         build() {
-            const componentRoot = document.createElement("div");
+            const componentRoot = document.createElement("a");
             componentRoot.setAttribute("class","card");
+            componentRoot.addEventListener("click",()=>this.toggleLongText());
 
             const textContainer = document.createElement("div");
             textContainer.setAttribute("class","short-box-text");
@@ -22,7 +23,6 @@ class NewsCards extends HTMLElement{
             
             const readMore = document.createElement("span");
             readMore.textContent = `Ler mais...`;
-            readMore.addEventListener("click",()=>this.toggleLongText());
 
             const shortImg = document.createElement("img");
             shortImg.src = this.getAttribute("photo") || "/img/noticia-default.png";
@@ -44,7 +44,7 @@ class NewsCards extends HTMLElement{
 
         toggleLongText(){
             const longText = this.shadowRoot.querySelector("p.longText");
-            const card = this.shadowRoot.querySelector("div.card");
+            const card = this.shadowRoot.querySelector("a.card");
             const shortImg = this.shadowRoot.querySelector(".card img");
             longText.style.display = (longText.style.display === "none" || longText.style.display === "") ? "block" : "none";
             card.style.flexDirection = (card.style.flexDirection === "row" || card.style.flexDirection === "") ? "column" : "row";
@@ -64,6 +64,8 @@ class NewsCards extends HTMLElement{
                     box-sizing: border-box;
                     border-radius: 0.25rem;
                     width: 100%;
+                    cursor: pointer;
+                    box-shadow: 5px 5px 8px 0px rgba(0, 0, 0, 0.575);
                 }
 
                 .card img{
@@ -86,7 +88,6 @@ class NewsCards extends HTMLElement{
                 }
 
                 .short-box-text > span{
-                    cursor: pointer;
                     color: black;
                     padding: .25rem .5rem;
                     margin: .25rem;

@@ -27,7 +27,7 @@ class Whocards extends HTMLElement{
             cardRight.setAttribute("class", "card__right");
         
             const cardImage = document.createElement("img");
-            cardImage.src = this.getAttribute("photo") || "/img/foto-default.jpg";
+            cardImage.src = this.getAttribute("photo") || "/img/pessoas/foto-default.jpg";
             cardImage.alt = "Foto da Pessoa";
             cardRight.appendChild(cardImage);
             
