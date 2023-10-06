@@ -66,6 +66,7 @@ class NewsCards extends HTMLElement{
                     width: 100%;
                     cursor: pointer;
                     box-shadow: 5px 5px 8px 0px rgba(0, 0, 0, 0.575);
+                    transition-duration: 0.2s;
                 }
 
                 .card img{
@@ -75,6 +76,11 @@ class NewsCards extends HTMLElement{
                     max-height: auto;
                     object-fit: cover;
                     
+                }
+
+                .card:hover{
+                    box-shadow: 5px 5px 10px 0px #fff;
+                    transition-duration: 0.2s;
                 }
 
                 .short-box-text{
@@ -97,8 +103,7 @@ class NewsCards extends HTMLElement{
 
                 }
 
-                .short-box-text > span:hover{
-                    
+                .short-box-text > span:hover{                    
                     opacity: 0.6;
                 }
 

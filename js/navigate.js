@@ -1,3 +1,5 @@
+const homeContent = document.documentElement.outerHTML;
+
 function loadAguaContent() {
     const contentDiv = document.getElementById('waterpage');
     const allContent = document.body;
@@ -202,17 +204,12 @@ p {
     allContent.appendChild(contentDiv);
     allContent.appendChild(style)
   }
-  
-  // Listen for hash changes
-  window.addEventListener('hashchange', () => {
+  window.addEventListener('popstate', () => {
     const route = window.location.hash.slice(1);
     if (route === 'agua') {
       loadAguaContent();
     }
+    else {
+      document.documentElement.innerHTML = homeContent;
+    }
   });
-  
-  // Load content for the initial hash
-  if (window.location.hash === 'agua') {
-    loadAguaContent();
-  }
-  
