@@ -1,4 +1,4 @@
-![AMOVA logo](/img/AMOVA_logo_complete.jpg)
+![AMOVA logo](img/Amova_logo_complete.png)
 # AMOVA website
 
 Repository containing the files to the **Neighbourhood association of Villas do Arraial** website.
