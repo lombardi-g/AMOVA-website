@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+     <!-- My CSS -->
+     <link rel="stylesheet" href="../css/waterpage.css">
+
+</head>
+<body>
+         
+    <div class="header">
+        <div class="inner-header flex">
+        
+        <h2>Água</h2>        
+        <div class="lower">
+        </div>
+        </div>
+        
+        <!--Waves Container-->
+        <div>
+        <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+        viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+        <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+        <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+        <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+        </g>
+        </svg>
+        </div>     
+    </div>
+
+    <div class="content flex">
+
+        <p>O fornecimento de água para os imóveis do Villas do Arraial é feito pela empresa privada FM Construtora,  que explora e dá manutenção no poço artesiano situado na Praça da Caixa D’Água.</p>
+        <p>Cada morador ou proprietário de imóvel no Villas deve solicitar diretamente a esta empresa a instalação de hidrômetro e assinar seu contrato particular (contato na página inicial).</p>
+        <p>Abaixo pode ser consultado o contrato entre a FM Construtora e a AMOVA, que tem uma pequena participação nas faturas pagas.</p>
+        <p>Por força de contrato a água é submetida a análise de qualidade a cada 6 meses, e o resultado dos testes atualizado é publicado aqui nesta página.</p>
+        <p>Para conferir a sua fatura  no final desta página há uma calculadora que dá o valor a ser pago de acordo com o volume de água consumido no mês, obedecendo à tabela de preços por faixa de consumo.</p>
+
+        <div>
+        <label for="aguaInput">Calculadora de água:</label>
+        <input type="text" id="aguaInput" placeholder="Digitar consumo de água em m³">
+        <span id="result">R$</span>
+        </div>
+
+        <h3>PDFs</h3>
+        <ul>
+          <li><a href="../assets/Exame agua.pdf">Exame água</a></li>
+          <li><a href="../assets/TERMO DE ACORDO DA AGUA.PDF">Termo de acordo</a></li>
+        </ul>
+    </div>
+  
+    <!-- <script src="../js/watercalculator.js"></script> -->
+</body>
+</html>

@@ -1,0 +1,23 @@
+* {
+    font-family: 'Roboto', sans-serif;
+    opacity: 1 !important;
+}
+
+body{
+    background-image: linear-gradient(45deg, #A6CF4a 10%,transparent 10%,transparent 90%,#A6CF4a 90%),linear-gradient(135deg, transparent 40%, #A6CF4a80 40%, #A6CF4a80 60%, transparent 0),linear-gradient(45deg, transparent 40%, #A6CF4a 40%, #A6CF4a 60%, transparent 0);
+    background-size: 4em 4em;
+    background-color: #ffffff;
+    opacity: 0.15;
+    margin: 0;
+    padding: 0;
+
+    
+}
+
+#introduction{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(175deg, #00000000 25%, #029edb 25%, #029edb 75%, #00000000 75%);
+}

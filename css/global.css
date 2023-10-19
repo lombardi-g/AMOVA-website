@@ -207,6 +207,7 @@ footer{
         text-shadow: 0px 2px 1px #fff;
     }
     .doccards > span{
+        margin-top: 2rem;
         padding-left: 1rem;
         font-size: 4vb;
         text-shadow: 0px 2px 1px #fff;
