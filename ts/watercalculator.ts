@@ -1,20 +1,5 @@
 function calculateConsumption(input: number): string | number {
 
-    if (isNaN(input)) {
-      return 'Digitar um número';
-    }
-      else if(input<0){
-        return 'Digitar número acima de 0';
-      }
-      else if (input>300) {
-        return 'Valor muito alto';
-      }
-      else{
-        return 'Erro';
-      }
-    
-  
-    // Calculate consumption based on the provided rules
     let consumption: number;
     if (input >= 0 && input <= 6) {
       consumption = 36.47;
@@ -38,4 +23,30 @@ function calculateConsumption(input: number): string | number {
   
     return consumption.toFixed(2);
   }
-  
+
+let aguaInput = document.getElementById('aguaInput') as HTMLInputElement;
+let result = document.getElementById('result') as HTMLSpanElement;
+
+aguaInput.addEventListener('input', () => {
+  const inputValue = parseFloat(aguaInput.value.trim());
+
+  if (!isNaN(inputValue) && inputValue >= 0) {
+    let resultValue = calculateConsumption(inputValue);
+    result.textContent = `Resultado: ${resultValue} R$`;
+  } else{
+    result.textContent = `Inserir número válido`  
+  }
+
+//   const numericValue = parseFloat(inputValue);
+
+//   if (isNaN(numericValue)) {
+//       result.textContent = 'Insira um número';
+//   } else if (numericValue < 0 || numericValue > 300) {
+//       result.textContent = 'Error: Value must be between 0 and 300';
+//   } else {
+//       result.textContent = ''; // Clear any previous error messages
+//       // Call your other function here with the valid numericValue
+//       yourOtherFunction(numericValue);
+//   }
+// });
+})

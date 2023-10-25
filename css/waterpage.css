@@ -41,6 +41,36 @@ p{
     margin: 1rem;
 }
 
+#water-calculator-box {
+    background-color: #3498db;
+    margin: 0.8rem;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;   
+  }
+  
+  #water-calculator-box label {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  #water-calculator-box input {
+    width: 15vh;
+    height: 3.5vh;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+  }
+   
+  #result {
+    display: block;
+    margin-top: 10px;
+    font-size: 16px;
+    color: #333; /* Text color for the result */
+  }
+
 .lower{
     display: flex;
     justify-content: space-between;

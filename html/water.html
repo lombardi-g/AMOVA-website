@@ -42,21 +42,21 @@
         <p>Cada morador ou proprietário de imóvel no Villas deve solicitar diretamente a esta empresa a instalação de hidrômetro e assinar seu contrato particular (contato na página inicial).</p>
         <p>Abaixo pode ser consultado o contrato entre a FM Construtora e a AMOVA, que tem uma pequena participação nas faturas pagas.</p>
         <p>Por força de contrato a água é submetida a análise de qualidade a cada 6 meses, e o resultado dos testes atualizado é publicado aqui nesta página.</p>
-        <p>Para conferir a sua fatura  no final desta página há uma calculadora que dá o valor a ser pago de acordo com o volume de água consumido no mês, obedecendo à tabela de preços por faixa de consumo.</p>
+        <p style="color: darkblue;">Para conferir a sua fatura, abaixo há uma calculadora que dá o valor a ser pago de acordo com o volume de água consumido no mês, obedecendo à tabela de preços por faixa de consumo.</p>
 
-        <div>
+        <div id="water-calculator-box">
         <label for="aguaInput">Calculadora de água:</label>
-        <input type="number" id="aguaInput" placeholder="Digitar consumo de água em m³">
+        <input type="number" min="0" step="1" id="aguaInput" placeholder="Consumo em m³">
         <span id="result"></span>
         </div>
 
-        <h3>PDFs</h3>
+        <h3>Documentos</h3>
         <ul>
           <li><a href="../assets/Exame agua.pdf">Exame água</a></li>
           <li><a href="../assets/TERMO DE ACORDO DA AGUA.PDF">Termo de acordo</a></li>
         </ul>
     </div>
   
-    <!-- <script src="../js/watercalculator.js"></script> -->
+    <script src="../ts/watercalculator.js"></script>
 </body>
 </html>
