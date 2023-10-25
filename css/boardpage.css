@@ -14,10 +14,30 @@ body{
     
 }
 
+#title{
+    padding-left: 1rem;
+    font-weight: bold;
+    font-size: larger;
+}
+
 #introduction{
     text-align: center;
     display: flex;
+    align-items: center;
     justify-content: center;
-    height: 100vh;
-    background: linear-gradient(175deg, #00000000 25%, #029edb 25%, #029edb 75%, #00000000 75%);
+    height: 30vh;
+    background: linear-gradient(177deg, #00000000 25%, #029edb 25%, #029edb 75%, #00000000 75%);
+}
+
+#lower{
+    display: flex;
+    justify-content: space-between;
+}
+
+.separator-line{
+    display: flex;
+    justify-content: start;
+    background: linear-gradient(200deg,rgb(73, 225, 73) ,green, #a6cf4a,green, #07c29a,rgb(35, 142, 8));
+    height: 4px;
+    margin-bottom: 1rem;
 }

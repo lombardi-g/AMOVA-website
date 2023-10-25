@@ -37,6 +37,10 @@ footer{
     height: 4px;
     
 }
+#links-title{
+    font-size: larger;
+    font-weight: bold;
+}
 
 .social-link{
     display: flex;
