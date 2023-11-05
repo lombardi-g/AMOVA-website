@@ -67,6 +67,7 @@ class NewsCards extends HTMLElement{
                     cursor: pointer;
                     box-shadow: 5px 5px 8px 0px rgba(0, 0, 0, 0.575);
                     transition-duration: 0.2s;
+                    // text-shadow: 0.2px 0px 0.2px white,0px 0.2px 0.2px white, -0.2px 0px 0.2px white, 0px -0.2px 0.2px white;
                 }
 
                 .card img{
