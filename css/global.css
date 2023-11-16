@@ -28,7 +28,7 @@ footer{
     background-image:  radial-gradient(#a6cf4a 2px, transparent 2px), radial-gradient(#a6cf4a 2px, #e5e5f7 2px);
     background-size: 90px 90px;
     background-position: 0 0,40px 40px;
-    height: 20vh;
+    /* height: 20vh; */
 }
 
 .separator-line{
