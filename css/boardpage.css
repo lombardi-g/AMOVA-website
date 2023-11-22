@@ -9,9 +9,7 @@ body{
     background-color: #A6CF4A;
     opacity: 0.15;
     margin: 0;
-    padding: 0;
-
-    
+    padding: 0;    
 }
 
 #title{
@@ -25,7 +23,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 30vh;
+    height: 60vh;
     background: linear-gradient(177deg, #00000000 25%, #029edb 25%, #029edb 75%, #00000000 75%);
 }
 
@@ -51,4 +49,14 @@ body{
     text-shadow: 0.6px 0px 0.5px white,0px 0.6px 0.5px white, -0.6px 0px 0.5px white, 0px -0.6px 0.5px white;
     line-height: 2rem;
     margin-right: 1rem;
+}
+@media screen and (max-width: 910px) {
+    #introduction{
+        height: 900px;
+        margin-top: -120px;
+    }
+    #lower{
+        display: block;
+        margin-left: 1rem;
+    }
 }
