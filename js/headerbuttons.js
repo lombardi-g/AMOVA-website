@@ -7,7 +7,7 @@ document.getElementById("homeButton").addEventListener("click", function() {
   });
 
   document.getElementById("portoButton").addEventListener("click", function() {
-    window.location.href = "https://sites.google.com/view/amova-website/in%C3%ADcio";
+    window.location.href = "https://sites.google.com/view/amova-villas-indice/in%C3%ADcio";
   });
 
 // Fale conosco button scrolling
