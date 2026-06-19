@@ -56,61 +56,97 @@ footer{
     margin-bottom: 5px;
 }
 
-.content {
-    padding: 1rem;
-    background-color: #a6cf4a;
+/* ---------- Banner de capa (hero) ---------- */
+.hero {
+    position: relative;
+    width: 100%;
+    height: clamp(240px, 42vw, 520px);
+    background: url("/img/background.jpg") center / cover no-repeat;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
-.news-container{
-    min-width: 45rem;
+/* Fade da imagem para o verde da página */
+.hero::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 60%;
+    background: linear-gradient(to bottom, rgba(166, 207, 74, 0) 0%, #a6cf4a 100%);
+    pointer-events: none;
+}
+
+.hero__logo {
+    position: relative;
+    z-index: 2;
+    max-height: 70%;
+    max-width: 82%;
+    filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.45));
+}
+
+/* ---------- Seções (notícias / serviços) ---------- */
+.section {
+    background-color: #a6cf4a;
+    padding: 0.5rem 1.5rem 2rem;
+}
+
+.section-title {
+    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: 0px 2px 1px #fff;
+    margin: 0.5rem 0 1.2rem;
+    padding-left: 0.25rem;
+}
+
+/* ---------- Grade de notícias (5x3 desktop) ---------- */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+}
+
+/* Card "Mais..." (sempre o último) */
+.news-more {
     display: flex;
     flex-direction: column;
-}
-
-.news-container > span{
-    padding-left: 1rem;
-    margin-top: -2.8rem;
-    font-size: 4vb;
-    text-shadow: 0px 2px 1px #fff;
-}
-
-#see-more{
-    background-color: forestgreen;
-    color: black;
-    font-size: larger;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    background-color: #4c6e00;
+    color: #fff;
     text-decoration: none;
-    text-shadow: 1px 1px 1px #fff;
-    box-shadow: 9px 9px 27px 0px rgba(0, 0, 0, 0.75);
-    -webkit-box-shadow: 9px 9px 27px 0px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 9px 9px 27px 0px rgba(0, 0, 0, 0.75);
-    margin: 1rem;
-    padding: 1rem;
-    border-radius: 4rem;
-    text-align: center;
+    border-radius: 0.5rem;
+    min-height: 180px;
+    box-shadow: 5px 5px 12px 0px rgba(0, 0, 0, 0.55);
+    transition: box-shadow 0.2s, transform 0.2s;
 }
 
-#see-more:hover{
-    box-shadow: 9px 9px 27px 0px #fff;
-    opacity: 0.85;
-    transition-duration: 0.2s;
+.news-more__icon {
+    font-size: 2.5rem;
+    line-height: 1;
 }
 
+.news-more__label {
+    font-size: 1.1rem;
+}
+
+.news-more:hover {
+    box-shadow: 5px 5px 16px 0px rgba(255, 255, 255, 0.9);
+    transform: translateY(-3px);
+}
+
+/* ---------- Grade de serviços (doc cards) ---------- */
 .doccards{
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    box-sizing: content-box;
+    grid-template-columns: repeat(4, 1fr);
+    box-sizing: border-box;
     list-style: none;
-    justify-content: space-between;
-}
-
-.doccards > span{
-    padding-left: 1rem;
-    margin-top: -3rem;
-    font-size: 4vb;
-    text-shadow: 0px 2px 1px #fff;
+    gap: 0.5rem;
 }
 
 .doccard{
@@ -121,12 +157,10 @@ footer{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 1rem;
+    margin: 0;
     padding: 1rem;
     border-radius: 1rem;
     justify-content: space-between;
-    max-height: 240px;
-    border-width: 30px;
     cursor: pointer;
     transition-duration: 0.2s;
     text-decoration: none;
@@ -134,17 +168,17 @@ footer{
 
 .doccard img{
     max-width: 100%;
-    height: 120px;
+    height: 110px;
     margin-bottom: 0.3rem;
 }
 
 
 .doccard .name {
     color: black;
-    text-align:justify;
+    text-align: center;
     padding: .25rem .5rem;
     margin: .25rem;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     border-radius: 1rem;
     background-color: #029edb;
     filter: brightness(1.15);
@@ -167,75 +201,34 @@ footer{
     }
 } */
 
-@media screen and (max-width: 530px) {
-    h1{
-        text-align: center;
-        margin: 0rem;
-        background: linear-gradient(0deg, #a6cf4a,#fff,#fff,#fff, #fff,#fff,#fff);
-    }
-
-    .content{
-        flex-direction: column;
-    }
-    .doccards {
-        grid-template-columns: 1fr;
-    }
-    footer{
-        flex-direction: column;
-    }
-    h1 img{
-        max-width: 100%;
-        height: 220px;
-        margin-bottom: 0rem;
-    }
-    .news-container{
-        min-width: 0px;
-        margin-left: -1rem;
-        flex-direction: column;
-    }
-    .news-container > span{
-    margin-top: -0.5rem !important;
-    }
-    .doccards > span{
-        margin-top: 2rem !important;
-    }
-}
-
+/* Tablet: 3 colunas de notícias, 3 de serviços */
 @media screen and (min-width: 531px) and (max-width: 1050px) {
-    h1{
-        text-align: center;
-        background: #fff;
-        margin: 1rem;
-    }
-
-    .content{
-        flex-direction: column;
+    .news-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
     .doccards {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(3, 1fr);
     }
     footer{
         flex-direction: row;
     }
-    h1 img{
-        max-width: 100%;
-        height: 220px;
-        margin-bottom: 0rem;
+}
+
+/* Celular: 2 colunas de notícias (2x3) e 2 de serviços */
+@media screen and (max-width: 530px) {
+    .news-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
-    .news-container{
-        min-width: 0px;
-        margin-left: -1rem;
+    .doccards {
+        grid-template-columns: repeat(2, 1fr);
     }
-    .news-container > span{
-        padding-left: 1rem;
-        margin-top: 1px;
-        font-size: 4vb;
-        text-shadow: 0px 2px 1px #fff;
+    footer{
+        flex-direction: column;
     }
-    .doccards > span{
-        margin-top: 2rem;
-        padding-left: 1rem;
-        font-size: 4vb;
-        text-shadow: 0px 2px 1px #fff;
+    .section {
+        padding: 0.5rem 1rem 1.5rem;
+    }
+    .section-title {
+        font-size: 1.6rem;
     }
 }

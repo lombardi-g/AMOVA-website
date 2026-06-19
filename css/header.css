@@ -30,3 +30,10 @@ header{
   transform: scale(1.15) rotate(-3deg);
 }
 
+/* No celular, esconde "Prefeitura de Porto Seguro" para liberar espaço */
+@media screen and (max-width: 530px) {
+  #portoButton {
+    display: none;
+  }
+}
+
