@@ -27,4 +27,26 @@
     const foto = document.getElementById("noticia-foto");
     foto.src = photo;
     foto.alt = manchete;
+
+    // Galeria opcional (photo2..photo10), separadas por "|".
+    const galeria = (params.get("galeria") || "")
+        .split("|")
+        .map(s => s.trim())
+        .filter(Boolean);
+
+    const galeriaEl = document.getElementById("noticia-galeria");
+    const galeriaTitulo = document.getElementById("noticia-galeria-titulo");
+
+    if (galeria.length) {
+        galeria.forEach((url, i) => {
+            const img = document.createElement("img");
+            img.src = url;
+            img.alt = manchete + " — foto " + (i + 2);
+            img.loading = "lazy";
+            galeriaEl.appendChild(img);
+        });
+    } else {
+        galeriaTitulo.style.display = "none";
+        galeriaEl.style.display = "none";
+    }
 })();

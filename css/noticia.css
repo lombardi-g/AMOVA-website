@@ -77,11 +77,43 @@ body {
     white-space: pre-line;
 }
 
+/* ---------- Galeria de fotos (photo2..photo10) ---------- */
+.noticia__galeria-titulo {
+    margin: 2.5rem 0 1rem;
+    font-size: 1.4rem;
+    color: #2c5200;
+}
+
+.noticia__galeria {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.noticia__galeria img {
+    flex: 1 1 220px;
+    min-width: 0;
+    max-width: 400px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    box-shadow: 4px 4px 14px 0px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s;
+}
+
+.noticia__galeria img:hover {
+    transform: translateY(-3px);
+}
+
 @media screen and (max-width: 530px) {
     .noticia__manchete {
         font-size: 1.6rem;
     }
     .noticia__descricao {
         font-size: 1.05rem;
+    }
+    .noticia__galeria img {
+        flex-basis: 140px;
+        height: 160px;
     }
 }

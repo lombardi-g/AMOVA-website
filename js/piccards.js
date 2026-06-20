@@ -19,9 +19,17 @@
 class NewsCards extends HTMLElement {
     constructor() {
         super();
-        const shadow = this.attachShadow({ mode: "open" });
-        shadow.appendChild(this.build());
-        shadow.appendChild(this.styles());
+        this.attachShadow({ mode: "open" });
+    }
+
+    // Constrói o card só quando o elemento entra na página, garantindo
+    // que os atributos já estejam definidos (tanto os escritos no HTML
+    // quanto os adicionados via JavaScript pelo carregador de notícias).
+    connectedCallback() {
+        if (this._built) return;
+        this._built = true;
+        this.shadowRoot.appendChild(this.build());
+        this.shadowRoot.appendChild(this.styles());
     }
 
     build() {
@@ -75,14 +83,31 @@ class NewsCards extends HTMLElement {
             descricao: this.getAttribute("descricao") || "",
             texto: this.getAttribute("texto") || "",
             data: this.getAttribute("data") || "",
-            // Resolve a foto para um caminho absoluto, válido a partir
-            // de qualquer página (index.html, highlights.html, etc.).
-            photo: new URL(
-                this.getAttribute("photo") || "/img/noticia-default.png",
-                document.baseURI
-            ).pathname,
+            // Resolve a foto para uma URL válida a partir de qualquer
+            // página. Imagens do próprio site viram caminho "/img/...";
+            // imagens externas (ex.: Google Drive) mantêm a URL completa.
+            photo: this.resolvePhoto(this.getAttribute("photo")),
         });
+
+        // Galeria opcional (photo2..photo10), separadas por "|".
+        const galeria = this.getAttribute("galeria");
+        if (galeria) {
+            const resolved = galeria.split("|")
+                .map(p => p.trim())
+                .filter(Boolean)
+                .map(p => this.resolvePhoto(p))
+                .join("|");
+            if (resolved) params.set("galeria", resolved);
+        }
+
         return "/html/noticia.html?" + params.toString();
+    }
+
+    resolvePhoto(value) {
+        const url = new URL(value || "/img/noticia-default.png", document.baseURI);
+        return url.origin === location.origin
+            ? url.pathname + url.search
+            : url.href;
     }
 
     // Usa "descricao" se existir; senão, corta o texto completo.
