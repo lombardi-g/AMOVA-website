@@ -61,7 +61,7 @@ footer{
     position: relative;
     width: 100%;
     height: clamp(240px, 42vw, 520px);
-    background: url("/img/background.jpg") center / cover no-repeat;
+    background: url("/img/coq-background.jpeg") center / cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
